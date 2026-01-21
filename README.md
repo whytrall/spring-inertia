@@ -20,11 +20,39 @@ A Spring Boot 4.x adapter for [Inertia.js](https://inertiajs.com/) — build mod
 
 ## Installation
 
-(TODO) Add the dependency to your `build.gradle.kts`:
+### 1. Add the GitHub Packages repository
+
+In your `build.gradle.kts`:
+
+```kotlin
+repositories {
+    mavenCentral()
+    maven {
+        url = uri("https://maven.pkg.github.com/whytrall/spring-inertia")
+        credentials {
+            username = project.findProperty("gpr.user") as String? ?: System.getenv("GITHUB_ACTOR")
+            password = project.findProperty("gpr.key") as String? ?: System.getenv("GITHUB_TOKEN")
+        }
+    }
+}
+```
+
+### 2. Add credentials
+
+Create or edit `~/.gradle/gradle.properties`:
+
+```properties
+gpr.user=YOUR_GITHUB_USERNAME
+gpr.key=YOUR_GITHUB_TOKEN
+```
+
+Generate a token at https://github.com/settings/tokens with `read:packages` scope.
+
+### 3. Add the dependency
 
 ```kotlin
 dependencies {
-    implementation("co.trall:spring-inertia-spring4:VERSION")
+    implementation("co.trall:spring-inertia-spring4:1.0.0")
 }
 ```
 
