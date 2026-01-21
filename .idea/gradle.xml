@@ -9,6 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/spring-inertia-core" />
+            <option value="$PROJECT_DIR$/spring-inertia-demoapp" />
             <option value="$PROJECT_DIR$/spring-inertia-spring4" />
           </set>
         </option>

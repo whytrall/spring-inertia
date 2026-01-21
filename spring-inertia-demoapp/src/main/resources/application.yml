@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: inertia-demo
+
+  thymeleaf:
+    cache: false
+
+inertia:
+  root-view: app
+  version: "1.0.0"
+
+server:
+  port: 8083
+
+logging:
+  level:
+    co.trall: DEBUG
